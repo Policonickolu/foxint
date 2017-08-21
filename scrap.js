@@ -87,7 +87,7 @@ function getRoundTrips($row){
 
     if($row.find('td').hasClass('product-travel-date')){
 
-      roundTrips.push();
+      roundTrips.push(getRoundTrip($row));
 
     }
 
@@ -96,6 +96,42 @@ function getRoundTrips($row){
   }
 
   return roundTrips;
+}
+
+/*
+ *  Get the round trip from the email by reading through its rows
+ *  from a trip date to the next trip date
+ */
+function getRoundTrip($rowDate){
+  
+  let rt = {
+    type: "",
+    date: "",
+    trains: []
+  };
+
+  rt.date = new Date(checkDate($rowDate.text().trim()));
+  rt.date = rt.date.toISOString().replace('T',' ');
+
+  let $row = $rowDate.next();
+
+  while(!$row.find('td').hasClass('product-travel-date')
+        && $row != ""){
+
+    if($row.hasClass('product-details')){
+
+      if(rt.type === "")
+        rt.type = $row.find('td.travel-way').text().trim();
+
+      rt.trains.push();
+
+    }
+
+    $row = $row.next();
+  }
+
+  return rt;
+
 }
 
 /*
@@ -125,6 +161,24 @@ function getTripInfo(){
   tripInfo.code = link[2].split('=')[1];
 
   return tripInfo;
+}
+
+/*
+ * Add the year to the travel date, same year of the order date
+ * or next year if the travel is after 31 december 
+ */
+function checkDate(day){
+
+  let date1 = new Date(day);
+  let date2 = new Date(orderDate);
+
+  date1.setFullYear(date2.getFullYear());
+
+  if(date1 < date2){
+    date1.setFullYear(date1.getFullYear() + 1);
+  }
+
+  return date1.toLocaleDateString();
 }
 
 /*

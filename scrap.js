@@ -23,7 +23,7 @@ var orderDate = /\d{2}\/\d{2}\/\d{4}/.exec($('#intro').text())[0]
   let result = {
     status: "ok",
     result: {
-      trips: "",
+      trips: getTrips(),
       custom: {
         prices: getPrices()
       }
@@ -47,7 +47,7 @@ function getTrips(){
     code: tripRef.code,
     name: tripRef.name,
     details:  {
-                price: "",
+                price: getTotalPrice(),
                 roundTrips: ""
               }
   }
@@ -74,6 +74,17 @@ function getPrices(){
   });
 
   return prices;
+}
+
+/*
+ *  Get the total price from the payment block of the email
+ */
+function getTotalPrice(){
+
+  let price = $('#block-payment .total-amount tr td:last-child').text();
+  price = price.replace(',','.');
+
+  return parseFloat(price);
 }
 
 /*

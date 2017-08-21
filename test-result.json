@@ -1,7 +1,16 @@
 {
   "status": "ok",
   "result": {
-    "trips": "",
+    "trips": [
+      {
+        "code": "SNIKXP",
+        "name": "dupont",
+        "details": {
+          "price": 768.5,
+          "roundTrips": ""
+        }
+      }
+    ],
     "custom": {
       "prices": [
         {

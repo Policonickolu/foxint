@@ -40,24 +40,24 @@ var orderDate = /\d{2}\/\d{2}\/\d{4}/.exec($('#intro').text())[0]
 function getTrips(){
 
   let trips = [];
-  let $row = $('#block-command table.product-header').first();
-  let tripRef = getTripInfo();
+  
+  $('#block-command table.product-header').each(function(i) {
 
-  let trip = {
-    code: tripRef.code,
-    name: tripRef.name,
-    details:  {
-                price: getTotalPrice(),
-                roundTrips: getRoundTrips($row)
-              }
-  }
+    let $row = $(this).first();
+    let tripInfo = getTripInfo(i);
 
-  // Add passengers only once in the last train
-  let rt = trip.details.roundTrips;
-  let trains = rt[rt.length-1].trains;
-  trains[trains.length-1].passengers = getPassengers($('.passengers').first());
+    let trip = {
+      code: tripInfo.code,
+      name: tripInfo.name,
+      details:  {
+                  price: getPrice($(this)),
+                  roundTrips: getRoundTrips($row)
+                }
+    }
 
-  trips.push(trip);
+    trips.push(trip);
+
+  });
 
   return trips;
 
@@ -70,7 +70,9 @@ function getRoundTrips($row){
     
   let roundTrips = [];
 
-  while($row != ""){
+  $row = $row.next();
+
+  while(!$row.hasClass('product-header') && $row != ""){
 
     if($row.find('td').hasClass('product-travel-date')){
 
@@ -129,13 +131,13 @@ function getTrain($rowDetails){
   let $td = $rowDetails.find('td');
 
   let train = {
-    departureTime: $td.eq(1).text().replace('h',':').trim(),
-    departureStation: $td.eq(2).text().trim(),
-    arrivalTime: $td.eq(7).text().replace('h',':').trim(),
-    arrivalStation: $td.eq(8).text().trim(),
-    type: $td.eq(3).text().trim(),
-    number: $td.eq(4).text().trim(),
-    //passengers: getPassengers($rowDetails.next())
+    departureTime     : $td.eq(1).text().replace('h',':').trim(),
+    departureStation  : $td.eq(2).text().trim(),
+    arrivalTime       : $td.eq(7).text().replace('h',':').trim(),
+    arrivalStation    : $td.eq(8).text().trim(),
+    type              : $td.eq(3).text().trim(),
+    number            : $td.eq(4).text().trim(),
+    passengers        : getPassengers($rowDetails.next())
   };
 
   return train;
@@ -161,10 +163,19 @@ function getPassengers($rowPassengers) {
   return passengers;
 }
 
+function getPrice($row) {
+ 
+  let price = $row.find('td:last-child').text();
+  price = price.replace(',','.');
+
+  return parseFloat(price);
+  
+}
+
 /*
  *  Get all the prices from the order block of the email
  */
-function getPrices(){
+function getPrices() {
 
   let prices = [];
 
@@ -195,14 +206,14 @@ function getTotalPrice(){
  *  We cannot use the discount card data
  *  because everyone doesn't necessarily have this card 
  */
-function getTripInfo(){
+function getTripInfo(index){
 
-  let link = $('.aftersale-web a').attr('href');
-  let tripInfo = {};
+  let $pnr = $('#block-travel .block-pnr').eq(index);
 
-  link = link.split(/[?&]/);
-  tripInfo.name = link[1].split('=')[1];
-  tripInfo.code = link[2].split('=')[1];
+  let tripInfo = {
+    name      : $pnr.find('td.pnr-name span').text().replace(/&nbsp;/g,'').trim(),
+    code      : $pnr.find('td.pnr-ref span').text().replace(/&nbsp;/g,'').trim()
+  }
 
   return tripInfo;
 }
@@ -260,3 +271,4 @@ function writeFile(content) {
   }); 
 
 }
+

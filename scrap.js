@@ -48,7 +48,7 @@ function getTrips(){
     name: tripRef.name,
     details:  {
                 price: getTotalPrice(),
-                roundTrips: ""
+                roundTrips: getRoundTrips($row)
               }
   }
 
@@ -74,6 +74,28 @@ function getPrices(){
   });
 
   return prices;
+}
+
+/*
+ *  Get the round trips from the email by reading through its rows
+ */
+function getRoundTrips($row){
+    
+  let roundTrips = [];
+
+  while($row != ""){
+
+    if($row.find('td').hasClass('product-travel-date')){
+
+      roundTrips.push();
+
+    }
+
+    $row = $row.next();
+
+  }
+
+  return roundTrips;
 }
 
 /*

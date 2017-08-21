@@ -7,7 +7,7 @@
         "name": "dupont",
         "details": {
           "price": 768.5,
-          "roundTrips": ""
+          "roundTrips": []
         }
       }
     ],

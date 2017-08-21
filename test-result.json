@@ -3,10 +3,10 @@
   "result": {
     "trips": [
       {
-        "code": "SNIKXP",
+        "code": "SOQUUL|SOQUYW",
         "name": "dupont",
         "details": {
-          "price": 768.5,
+          "price": 315.5,
           "roundTrips": [
             {
               "type": "Aller",
@@ -18,7 +18,25 @@
                   "arrivalTime": "18:56",
                   "arrivalStation": "LYON PART DIEU",
                   "type": "TGV",
-                  "number": "6687"
+                  "number": "6687",
+                  "passengers": [
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(4 à 11 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(0 à 3 ans)"
+                    }
+                  ]
                 }
               ]
             },
@@ -32,10 +50,37 @@
                   "arrivalTime": "15:01",
                   "arrivalStation": "PARIS GARE DE LYON",
                   "type": "TGV",
-                  "number": "6618"
+                  "number": "6618",
+                  "passengers": [
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(4 à 11 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(0 à 3 ans)"
+                    }
+                  ]
                 }
               ]
-            },
+            }
+          ]
+        }
+      },
+      {
+        "code": "SOUHHS|SOUHKI",
+        "name": "dupont",
+        "details": {
+          "price": 378,
+          "roundTrips": [
             {
               "type": "Aller",
               "date": "2016-09-15 00:00:00.000Z",
@@ -46,7 +91,25 @@
                   "arrivalTime": "19:17",
                   "arrivalStation": "AVIGNON TGV",
                   "type": "TGV",
-                  "number": "6121"
+                  "number": "6121",
+                  "passengers": [
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(4 à 11 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(0 à 3 ans)"
+                    }
+                  ]
                 }
               ]
             },

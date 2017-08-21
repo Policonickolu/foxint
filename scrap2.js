@@ -4,7 +4,7 @@ const fs = require('fs');
 const ch = require('cheerio');
 
 const inputFileName = 'test.html';
-const outputFileName = 'test-result.json';
+const outputFileName = 'test-result2.json';
 
 // DOM accessor
 var $ = ch.load(readCleanedFile(), {

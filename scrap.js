@@ -52,28 +52,15 @@ function getTrips(){
               }
   }
 
+  // Add passengers only once in the last train
+  let rt = trip.details.roundTrips;
+  let trains = rt[rt.length-1].trains;
+  trains[trains.length-1].passengers = getPassengers($('.passengers').first());
 
   trips.push(trip);
 
   return trips;
 
-}
-
-/*
- *  Get all the prices from the order block of the email
- */
-function getPrices(){
-
-  let prices = [];
-
-  $('.product-header td:last-child').each(function() {
-    prices.push({
-      value: parseFloat($(this).text().replace(',','.'))
-    });
-
-  });
-
-  return prices;
 }
 
 /*
@@ -123,7 +110,7 @@ function getRoundTrip($rowDate){
       if(rt.type === "")
         rt.type = $row.find('td.travel-way').text().trim();
 
-      rt.trains.push();
+      rt.trains.push(getTrain($row));
 
     }
 
@@ -132,6 +119,61 @@ function getRoundTrip($rowDate){
 
   return rt;
 
+}
+
+/*
+ *  Get a train details from a details row of the email
+ */
+function getTrain($rowDetails){
+
+  let $td = $rowDetails.find('td');
+
+  let train = {
+    departureTime: $td.eq(1).text().replace('h',':').trim(),
+    departureStation: $td.eq(2).text().trim(),
+    arrivalTime: $td.eq(7).text().replace('h',':').trim(),
+    arrivalStation: $td.eq(8).text().trim(),
+    type: $td.eq(3).text().trim(),
+    number: $td.eq(4).text().trim(),
+  };
+
+  return train;
+}
+
+/*
+ *  Get passengers list from a passengers row of the email
+ */
+function getPassengers($rowPassengers) {
+
+  let passengers = [];
+
+  $rowPassengers.find('td.typology').each(function() {
+
+    passengers.push({
+      type: $(this).next().text().includes("Billet échangeable") ? "échangeable" : "non échangeable",
+      age: /\(.*\)/.exec($(this).text())[0]
+    });
+
+  });
+
+  return passengers;
+}
+
+/*
+ *  Get all the prices from the order block of the email
+ */
+function getPrices(){
+
+  let prices = [];
+
+  $('.product-header td:last-child').each(function() {
+    prices.push({
+      value: parseFloat($(this).text().replace(',','.'))
+    });
+
+  });
+
+  return prices;
 }
 
 /*

@@ -41,10 +41,11 @@ function getTrips(){
 
   let trips = [];
   let $row = $('#block-command table.product-header').first();
+  let tripRef = getTripInfo();
 
   let trip = {
-    code: "",
-    name: "",
+    code: tripRef.code,
+    name: tripRef.name,
     details:  {
                 price: "",
                 roundTrips: ""
@@ -73,6 +74,24 @@ function getPrices(){
   });
 
   return prices;
+}
+
+/*
+ *  Get the name and ref of the orderer from the href link of the email
+ *  
+ *  We cannot use the discount card data
+ *  because everyone doesn't necessarily have this card 
+ */
+function getTripInfo(){
+
+  let link = $('.aftersale-web a').attr('href');
+  let tripInfo = {};
+
+  link = link.split(/[?&]/);
+  tripInfo.name = link[1].split('=')[1];
+  tripInfo.code = link[2].split('=')[1];
+
+  return tripInfo;
 }
 
 /*

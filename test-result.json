@@ -3,7 +3,17 @@
   "result": {
     "trips": "",
     "custom": {
-      "prices": ""
+      "prices": [
+        {
+          "value": 315.5
+        },
+        {
+          "value": 378
+        },
+        {
+          "value": 75
+        }
+      ]
     }
   }
 }

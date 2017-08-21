@@ -35,6 +35,30 @@ var orderDate = /\d{2}\/\d{2}\/\d{4}/.exec($('#intro').text())[0]
 })();
 
 /*
+ *  Get the trips from the email
+ */
+function getTrips(){
+
+  let trips = [];
+  let $row = $('#block-command table.product-header').first();
+
+  let trip = {
+    code: "",
+    name: "",
+    details:  {
+                price: "",
+                roundTrips: ""
+              }
+  }
+
+
+  trips.push(trip);
+
+  return trips;
+
+}
+
+/*
  *  Get all the prices from the order block of the email
  */
 function getPrices(){

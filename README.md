@@ -16,7 +16,9 @@ Cheerio
 ```
 git clone https://github.com/Policonickolu/foxint.git
 ```
+```
 cd foxint
+```
 ```
 npm install
 ```

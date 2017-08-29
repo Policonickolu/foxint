@@ -1,11 +1,19 @@
 {
-  "name": "Foxint",
+  "name": "sncf-scraper",
   "version": "0.1.0",
+  "description": "A program to scrap business data from 'Voyage SNCF' emails",
+  "licence": "",
   "repository": {
     "type": "git",
     "url": "git://github.com/Policonickolu/foxint"
   },
   "dependencies": {
-    "cheerio": "*"
+    "cheerio": ">= 0.22.0"
+  },
+  "engines": {
+    "node": ">= 0.6"
+  },
+  "scripts": {
+    "start": "node scrap.js; node scrap2.js"
   }
 }

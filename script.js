@@ -8,6 +8,7 @@ const outputFileName = 'test-result.json';
 var io = require('./fileio');
 
 var scraper = require('./scraper');
+var formatter = require('./formatter');
 
 var html = io.readCleanedFile(inputFileName);
 
@@ -19,7 +20,7 @@ var $ = ch.load(html, {
 
 var data = scraper.getDataFromHTML($);
 
-var result = JSON.stringify(data, null, 2);
+var result = formatter.format(data);
 
 io.writeFile(result, outputFileName);
 

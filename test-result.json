@@ -1,151 +1,166 @@
 {
-  "trips": [
-    {
-      "price": 315.5,
-      "dates": [
-        {
-          "date": "2016-09-02 00:00:00.000Z",
-          "trains": [
+  "status": "ok",
+  "result": {
+    "trips": [
+      {
+        "code": "SOQUUL|SOQUYW",
+        "name": "dupont",
+        "details": {
+          "price": 315.5,
+          "roundTrips": [
             {
-              "travelWay": "Aller",
-              "departureTime": "16:57",
-              "departureStation": "PARIS GARE DE LYON",
-              "arrivalTime": "18:56",
-              "arrivalStation": "LYON PART DIEU",
-              "type": "TGV",
-              "number": "6687",
-              "passengers": [
+              "type": "Aller",
+              "date": "2016-09-02 00:00:00.000Z",
+              "trains": [
                 {
-                  "type": "échangeable",
-                  "age": "(26 à 59 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(26 à 59 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(4 à 11 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(0 à 3 ans)"
+                  "departureTime": "16:57",
+                  "departureStation": "PARIS GARE DE LYON",
+                  "arrivalTime": "18:56",
+                  "arrivalStation": "LYON PART DIEU",
+                  "type": "TGV",
+                  "number": "6687",
+                  "passengers": [
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(4 à 11 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(0 à 3 ans)"
+                    }
+                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "date": "2016-09-04 00:00:00.000Z",
-          "trains": [
+            },
             {
-              "travelWay": "Retour",
-              "departureTime": "13:05",
-              "departureStation": "LYON PART DIEU",
-              "arrivalTime": "15:01",
-              "arrivalStation": "PARIS GARE DE LYON",
-              "type": "TGV",
-              "number": "6618",
-              "passengers": [
+              "type": "Retour",
+              "date": "2016-09-04 00:00:00.000Z",
+              "trains": [
                 {
-                  "type": "échangeable",
-                  "age": "(26 à 59 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(26 à 59 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(4 à 11 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(0 à 3 ans)"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "name": "dupont",
-      "code": "SOQUUL|SOQUYW"
-    },
-    {
-      "price": 378,
-      "dates": [
-        {
-          "date": "2016-09-15 00:00:00.000Z",
-          "trains": [
-            {
-              "travelWay": "Aller",
-              "departureTime": "16:37",
-              "departureStation": "PARIS GARE DE LYON",
-              "arrivalTime": "19:17",
-              "arrivalStation": "AVIGNON TGV",
-              "type": "TGV",
-              "number": "6121",
-              "passengers": [
-                {
-                  "type": "échangeable",
-                  "age": "(26 à 59 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(26 à 59 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(4 à 11 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(0 à 3 ans)"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "date": "2016-09-18 00:00:00.000Z",
-          "trains": [
-            {
-              "travelWay": "Retour",
-              "departureTime": "15:42",
-              "departureStation": "AVIGNON TGV",
-              "arrivalTime": "18:30",
-              "arrivalStation": "PARIS GARE DE LYON",
-              "type": "TGV",
-              "number": "6122",
-              "passengers": [
-                {
-                  "type": "échangeable",
-                  "age": "(26 à 59 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(26 à 59 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(4 à 11 ans)"
-                },
-                {
-                  "type": "échangeable",
-                  "age": "(0 à 3 ans)"
+                  "departureTime": "13:05",
+                  "departureStation": "LYON PART DIEU",
+                  "arrivalTime": "15:01",
+                  "arrivalStation": "PARIS GARE DE LYON",
+                  "type": "TGV",
+                  "number": "6618",
+                  "passengers": [
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(4 à 11 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(0 à 3 ans)"
+                    }
+                  ]
                 }
               ]
             }
           ]
         }
-      ],
-      "name": "dupont",
-      "code": "SOUHHS|SOUHKI"
+      },
+      {
+        "code": "SOUHHS|SOUHKI",
+        "name": "dupont",
+        "details": {
+          "price": 378,
+          "roundTrips": [
+            {
+              "type": "Aller",
+              "date": "2016-09-15 00:00:00.000Z",
+              "trains": [
+                {
+                  "departureTime": "16:37",
+                  "departureStation": "PARIS GARE DE LYON",
+                  "arrivalTime": "19:17",
+                  "arrivalStation": "AVIGNON TGV",
+                  "type": "TGV",
+                  "number": "6121",
+                  "passengers": [
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(4 à 11 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(0 à 3 ans)"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Retour",
+              "date": "2016-09-18 00:00:00.000Z",
+              "trains": [
+                {
+                  "departureTime": "15:42",
+                  "departureStation": "AVIGNON TGV",
+                  "arrivalTime": "18:30",
+                  "arrivalStation": "PARIS GARE DE LYON",
+                  "type": "TGV",
+                  "number": "6122",
+                  "passengers": [
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(26 à 59 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(4 à 11 ans)"
+                    },
+                    {
+                      "type": "échangeable",
+                      "age": "(0 à 3 ans)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "custom": {
+      "prices": [
+        {
+          "value": 315.5
+        },
+        {
+          "value": 378
+        },
+        {
+          "value": 75
+        }
+      ]
     }
-  ],
-  "prices": [
-    315.5,
-    378,
-    75
-  ]
+  }
 }

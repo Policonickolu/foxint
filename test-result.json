@@ -1,4 +1,20 @@
 {
-  "trips": [],
-  "prices": []
+  "trips": [
+    {
+      "price": 315.5,
+      "dates": [],
+      "name": "dupont",
+      "code": "SOQUUL|SOQUYW"
+    },
+    {
+      "price": 378,
+      "dates": [],
+      "name": "dupont",
+      "code": "SOUHHS|SOUHKI"
+    }
+  ],
+  "prices": [
+    315.5,
+    378
+  ]
 }

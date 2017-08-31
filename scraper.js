@@ -40,6 +40,11 @@ function getDataFromCommandBlock($rows){
     switch(categoryOf($row)) {
       
       case 'product-header':
+        tripId++;
+        dateId = trainId = -1;
+        let price = getPrice($row);
+        trips[tripId] = {price: price, dates: []};
+        prices.push(price);
         break;
       
       case 'product-travel-date':
@@ -64,6 +69,22 @@ function getDataFromCommandBlock($rows){
     prices: prices
   };
 }
+
+/*
+ * Get the price in the travel header
+ */
+function getPrice($row){
+
+  let price = $row.find('td:last-child').text().replace(',','.');
+
+  return parseFloat(price);
+}
+
+
+
+
+
+
 
 /*
  * Define a category name for the HTML row to know how to act according to.

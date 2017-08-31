@@ -1,5 +1,8 @@
 var exp = module.exports = {};
 
+var Train = require('./train');
+var Passenger = require('./passenger');
+
 /*
  * Crawl the HTML row by row to get desired data
  */
@@ -57,9 +60,12 @@ function getDataFromCommandBlock($rows){
         break;
       
       case 'product-details':
+        trainId++;
+        trips[tripId].dates[dateId].trains[trainId] = new Train($row);
         break;
       
       case 'passengers':
+        trips[tripId].dates[dateId].trains[trainId].passengers = getPassengers($row);
         break;
 
       case 'intro':
@@ -68,6 +74,7 @@ function getDataFromCommandBlock($rows){
         break;
 
       case 'cards':
+        prices = prices.concat(getCardsPrices($row));
 
     }
   }
@@ -107,9 +114,38 @@ function getDate($row, orderDate){
   return date;
 }
 
+/*
+ * Get the passengers list
+ */
+function getPassengers($row){
 
+  let passengers = [];
 
+  $typologies = $row.find('td.typology');
+  for(var i = 0; i < $typologies.length; i++){
 
+    passengers.push(new Passenger($typologies.eq(i)));
+  
+  }
+
+  return passengers;
+}
+
+/*
+ * Get the prices of the buyed cards 
+ */
+function getCardsPrices($row){
+
+  let prices = []
+  
+  let $amounts = $row.find('.product-header td.amount');
+
+  for(var i = 0; i < $amounts.length; i++){
+    prices.push(parseFloat($amounts.text().replace(',','.')));
+  }
+
+  return prices;
+}
 
 /*
  * Define a category name for the HTML row to know how to act according to.

@@ -5,11 +5,67 @@
       "dates": [
         {
           "date": "2016-09-02 00:00:00.000Z",
-          "trains": []
+          "trains": [
+            {
+              "travelWay": "Aller",
+              "departureTime": "16:57",
+              "departureStation": "PARIS GARE DE LYON",
+              "arrivalTime": "18:56",
+              "arrivalStation": "LYON PART DIEU",
+              "type": "TGV",
+              "number": "6687",
+              "passengers": [
+                {
+                  "type": "échangeable",
+                  "age": "(26 à 59 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(26 à 59 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(4 à 11 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(0 à 3 ans)"
+                }
+              ]
+            }
+          ]
         },
         {
           "date": "2016-09-04 00:00:00.000Z",
-          "trains": []
+          "trains": [
+            {
+              "travelWay": "Retour",
+              "departureTime": "13:05",
+              "departureStation": "LYON PART DIEU",
+              "arrivalTime": "15:01",
+              "arrivalStation": "PARIS GARE DE LYON",
+              "type": "TGV",
+              "number": "6618",
+              "passengers": [
+                {
+                  "type": "échangeable",
+                  "age": "(26 à 59 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(26 à 59 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(4 à 11 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(0 à 3 ans)"
+                }
+              ]
+            }
+          ]
         }
       ],
       "name": "dupont",
@@ -20,11 +76,67 @@
       "dates": [
         {
           "date": "2016-09-15 00:00:00.000Z",
-          "trains": []
+          "trains": [
+            {
+              "travelWay": "Aller",
+              "departureTime": "16:37",
+              "departureStation": "PARIS GARE DE LYON",
+              "arrivalTime": "19:17",
+              "arrivalStation": "AVIGNON TGV",
+              "type": "TGV",
+              "number": "6121",
+              "passengers": [
+                {
+                  "type": "échangeable",
+                  "age": "(26 à 59 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(26 à 59 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(4 à 11 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(0 à 3 ans)"
+                }
+              ]
+            }
+          ]
         },
         {
           "date": "2016-09-18 00:00:00.000Z",
-          "trains": []
+          "trains": [
+            {
+              "travelWay": "Retour",
+              "departureTime": "15:42",
+              "departureStation": "AVIGNON TGV",
+              "arrivalTime": "18:30",
+              "arrivalStation": "PARIS GARE DE LYON",
+              "type": "TGV",
+              "number": "6122",
+              "passengers": [
+                {
+                  "type": "échangeable",
+                  "age": "(26 à 59 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(26 à 59 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(4 à 11 ans)"
+                },
+                {
+                  "type": "échangeable",
+                  "age": "(0 à 3 ans)"
+                }
+              ]
+            }
+          ]
         }
       ],
       "name": "dupont",
@@ -33,6 +145,7 @@
   ],
   "prices": [
     315.5,
-    378
+    378,
+    75
   ]
 }

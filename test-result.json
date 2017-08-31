@@ -2,13 +2,31 @@
   "trips": [
     {
       "price": 315.5,
-      "dates": [],
+      "dates": [
+        {
+          "date": "2016-09-02 00:00:00.000Z",
+          "trains": []
+        },
+        {
+          "date": "2016-09-04 00:00:00.000Z",
+          "trains": []
+        }
+      ],
       "name": "dupont",
       "code": "SOQUUL|SOQUYW"
     },
     {
       "price": 378,
-      "dates": [],
+      "dates": [
+        {
+          "date": "2016-09-15 00:00:00.000Z",
+          "trains": []
+        },
+        {
+          "date": "2016-09-18 00:00:00.000Z",
+          "trains": []
+        }
+      ],
       "name": "dupont",
       "code": "SOUHHS|SOUHKI"
     }

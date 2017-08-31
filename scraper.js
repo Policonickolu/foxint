@@ -48,6 +48,12 @@ function getDataFromCommandBlock($rows){
         break;
       
       case 'product-travel-date':
+        dateId++;
+        trainId = -1;
+        trips[tripId].dates[dateId] = {
+          date: getDate($row, orderDate).toISOString().replace('T',' '),
+          trains: []
+        };
         break;
       
       case 'product-details':
@@ -57,6 +63,8 @@ function getDataFromCommandBlock($rows){
         break;
 
       case 'intro':
+        let od = $row.text().match(/\d{2}\/\d{2}\/\d{4}/)[0];
+        orderDate = new Date(od.split('/').reverse().join('-'));
         break;
 
       case 'cards':
@@ -80,7 +88,24 @@ function getPrice($row){
   return parseFloat(price);
 }
 
+/*
+ * Get the date (dd/mm) in the HTML row and guess the year with the order date.
+ */
+function getDate($row, orderDate){
+        
 
+  let date = new Date(new Date($row.text().trim()).toLocaleDateString());
+
+  let year = orderDate.getFullYear();
+
+  date.setFullYear(year);
+
+  if(date < orderDate){
+    date.setFullYear(year + 1);
+  }
+
+  return date;
+}
 
 
 

@@ -5,10 +5,10 @@ const inputFileName = 'test.html';
 const outputFileName = 'test-result.json';
 
 // File System functions
-var io = require('./fileio');
+var io = require('./lib/fileio');
 
-var scraper = require('./scraper');
-var formatter = require('./formatter');
+var scraper = require('./lib/scraper');
+var formatter = require('./lib/formatter');
 
 var html = io.readCleanedFile(inputFileName);
 
